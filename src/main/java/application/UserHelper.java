@@ -24,4 +24,12 @@ public class UserHelper extends HelperBase {
     public void clickOkButton() {
         click(By.xpath("//button[.='Ok']"));
     }
+
+    public boolean isLogged() {
+        return wd.findElements(By.xpath("//a[.='Log in']")).size()>0;
+    }
+
+    public void logout() {
+        click(By.xpath("//a[.='logOut']"));
+    }
 }
