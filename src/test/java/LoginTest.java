@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class LoginTest extends TestBase{
+public class LoginTest extends TestBase {
 
     @BeforeMethod
     public void precondition(){
@@ -25,6 +25,11 @@ public class LoginTest extends TestBase{
         Assert.assertEquals(loginS,"Logged in success");
 
     }
+    
+                                //@BeforeSuite
+                                        //@BeforeMethod
+                                                //@BeforeClass
+
     @Test
     public  void loginTestPositiveDto(){
         User user = new User().withEmail("noa@gmail.com").withPassword("Nnoa12345$");
@@ -38,6 +43,7 @@ public class LoginTest extends TestBase{
         Assert.assertEquals(loginS,"Logged in success");
 
     }
+
 
 
 }

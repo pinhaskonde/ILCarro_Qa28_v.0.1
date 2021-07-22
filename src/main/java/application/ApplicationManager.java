@@ -25,5 +25,9 @@ public class ApplicationManager {
         return userHelper;
     }
 
-
 }
+
+
+//@BeforeSuite
+//@BeforeMethod
+//@BeforeClass

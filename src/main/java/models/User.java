@@ -14,17 +14,17 @@ public class User {
 
     public User withLastName(String lastName) {
         this.lastName = lastName;
-        return  this;
+        return this;
     }
 
     public User withEmail(String email) {
         this.email = email;
-        return  this;
+        return this;
     }
 
     public User withPassword(String password) {
         this.password = password;
-        return  this;
+        return this;
     }
 
     public User withPhone(String phone) {
