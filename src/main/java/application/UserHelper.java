@@ -23,18 +23,17 @@ public class UserHelper extends HelperBase {
         type(By.cssSelector("input#email"), user.getEmail());
         type(By.cssSelector("input#password"), user.getPassword());
     }
-    public void fillRegForm(String name, String lastName,String email,String password) {
-        type(By.cssSelector("input#name"),name);
-        type(By.cssSelector("input#lastName"),lastName);
-        type(By.cssSelector("input#email"),email);
-        type(By.cssSelector("input#password"),password);
+    public void fillRegForm(String name, String lastName, String email, String password) {
+        type(By.cssSelector("input#name"), name);
+        type(By.cssSelector("input#lastName"), lastName);
+        type(By.cssSelector("input#email"), email);
+        type(By.cssSelector("input#password"), password);
     }
 
-        public void fillLoginForm(String email, String password) {
+    public void fillLoginForm(String email, String password) {
         type(By.id("email"), email);
         type(By.id("password"), password);
     }
-
     public void fillLoginForm(User user) {
         type(By.id("email"), user.getEmail());
         type(By.id("password"), user.getPassword());
@@ -44,7 +43,7 @@ public class UserHelper extends HelperBase {
         click(By.xpath("//*[@type='submit']"));
     }
 
-    public void checkboxIAgree(){
+    public void checkboxIAgree() {
         click(By.xpath("//label[contains(text(),'I agree to the')]"));
     }
 

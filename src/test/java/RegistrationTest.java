@@ -26,17 +26,17 @@ public class RegistrationTest extends TestBase {
         app.userHelper().clickOkButton();
         Assert.assertEquals(regSuccess,"You are logged in success");
     }
-//    @Test
-//    public void regTestUserPositive(String name,String lastName,String email, String password){
-//        app.userHelper().openRegForm();
-//        app.userHelper().pause(3000);
-//        app.userHelper().fillRegForm("Piterr","Lastnamee","piterr@.gmail.com","Adode12#");
-//        app.userHelper().checkboxIAgree();
-//        app.userHelper().clickSubmitButton();
-//        String regSuccess = app.userHelper().getText(By.xpath("//div[@class='dialog-container']//h2"));
-//        app.userHelper().clickOkButton();
-//        Assert.assertEquals(regSuccess,"You are logged in success");
-//
-//    }
+    @Test
+    public void regTestUserPositive(){
+        app.userHelper().openRegForm();
+        app.userHelper().fillRegForm("Pitterr","Lastnamee","pitterr@gmail.com","Azode12#");
+        app.userHelper().checkboxIAgree();
+        app.userHelper().clickSubmitButton();
+        app.userHelper().pause(3000);
+        String regSuccess = app.userHelper().getText(By.xpath("//div[@class='dialog-container']//h2"));
+        app.userHelper().clickOkButton();
+      Assert.assertEquals(regSuccess,"You are logged in success");
+
+    }
 
 }
