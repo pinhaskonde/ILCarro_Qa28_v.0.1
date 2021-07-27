@@ -40,7 +40,7 @@ public class CreateNewCarTest extends TestBase {
         app.carHelper().attachPhoto();
         app.carHelper().pause(7000);
 
-        Assert.assertTrue(app.carHelper().isCarAdded());
+//        Assert.assertTrue(app.carHelper().isCarAdded());
 
 //--------Homework-------------------------------Homework---------------------Homework---------------------------
         app.userHelper().click(By.xpath("//button[@type='submit']"));
@@ -49,5 +49,7 @@ public class CreateNewCarTest extends TestBase {
         Assert.assertEquals(carCreatedSuccess,"Car added");
         app.userHelper().click(By.xpath("//button[text()='Show car']"));
         app.carHelper().pause(5000);
+
+
     }
 }

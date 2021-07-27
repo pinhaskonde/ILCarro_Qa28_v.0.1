@@ -63,4 +63,8 @@ public class UserHelper extends HelperBase {
     public void logout() {
         click(By.xpath("//a[.='logOut']"));
     }
+
+    public void submitForm() {
+        click(By.xpath("//*[@type='submit']"));
+    }
 }
