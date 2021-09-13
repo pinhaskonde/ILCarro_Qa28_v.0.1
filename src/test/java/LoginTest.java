@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void precondition(){
         if (!app.userHelper().isLogged()){
             app.userHelper().logout();

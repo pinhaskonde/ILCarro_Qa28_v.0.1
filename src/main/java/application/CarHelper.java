@@ -86,6 +86,9 @@ public class CarHelper extends HelperBase {
         wd.findElement(locator).click();
     }
 
+    public void submitCar() {
+        click(By.xpath("//button[@text()='Search cars']"));
+    }
 
 
 //    href="/logout?url=%2Fsearch"

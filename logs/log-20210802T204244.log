@@ -1,0 +1,14 @@
+20:42:46 INFO  application.ApplicationManager - Start browser CHROME
+20:42:48 INFO  application.ApplicationManager - Navigate to --> https://ilcarro.xyz/search
+20:42:48 INFO  TestBase - Start method --> createNewCar
+20:43:20 INFO  TestBase - End of method --> createNewCar
+20:43:20 INFO  TestBase - Start method --> loginTestPositive
+20:44:01 INFO  TestBase - Start method --> regTestUserPositive
+20:44:41 INFO  TestBase - Start method --> negativeTestSendKey
+20:44:51 INFO  TestBase - End of method --> negativeTestSendKey
+20:44:51 INFO  TestBase - Start method --> positiveTestSendKey
+20:45:01 INFO  TestBase - End of method --> positiveTestSendKey
+20:45:01 INFO  TestBase - Start method --> selectPeriodCurrentMonth
+20:45:11 INFO  TestBase - End of method --> selectPeriodCurrentMonth
+20:45:11 INFO  TestBase - Start method --> selectPeriodFuture
+20:45:21 INFO  TestBase - End of method --> selectPeriodFuture

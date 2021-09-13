@@ -1,0 +1,8 @@
+5023 [Test worker] INFO  TestBase - Start method negativeTestSendKey
+9369 [Test worker] INFO  TestBase - End of method negativeTestSendKey
+9371 [Test worker] INFO  TestBase - Start method positiveTestSendKey
+24462 [Test worker] INFO  TestBase - End of method positiveTestSendKey
+24463 [Test worker] INFO  TestBase - Start method selectPeriodCurrentMonth
+38349 [Test worker] INFO  TestBase - End of method selectPeriodCurrentMonth
+38350 [Test worker] INFO  TestBase - Start method selectPeriodFuture
+45570 [Test worker] INFO  TestBase - End of method selectPeriodFuture

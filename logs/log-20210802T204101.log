@@ -1,0 +1,5 @@
+20:41:03 INFO  application.ApplicationManager - Start browser CHROME
+20:41:06 INFO  application.ApplicationManager - Navigate to --> https://ilcarro.xyz/search
+20:41:06 INFO  TestBase - Start method --> registrationTestPositive
+20:41:06 INFO  TestBase - Registration with --> Name: Alexey --> LastName: Pusshkin0 --> Email: aqpuvsdinn@gmail.com --> Password: tFggg97$
+20:41:22 INFO  TestBase - End of method --> registrationTestPositive

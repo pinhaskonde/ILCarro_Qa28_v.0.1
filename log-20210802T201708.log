@@ -1,0 +1,8 @@
+4205 INFO  TestBase - Start method negativeTestSendKey
+18895 INFO  TestBase - End of method negativeTestSendKey
+18897 INFO  TestBase - Start method positiveTestSendKey
+34119 INFO  TestBase - End of method positiveTestSendKey
+34120 INFO  TestBase - Start method selectPeriodCurrentMonth
+38762 INFO  TestBase - End of method selectPeriodCurrentMonth
+38763 INFO  TestBase - Start method selectPeriodFuture
+49685 INFO  TestBase - End of method selectPeriodFuture

@@ -8,27 +8,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.LocalDate;
 
-public class SearchHelper extends HelperBase{
+public class SearchHelper extends HelperBase {
     public SearchHelper(WebDriver wd) {
         super(wd);
     }
 
     public void typeSearchCurrentMonth(String city, String dataFrom, String dataTo) {
         fillInputCity(city);
-        typeInputPeriod(dataFrom,dataTo);
+        typeInputPeriod(dataFrom, dataTo);
     }
 
     private void typeInputPeriod(String dataFrom, String dataTo) {
-        type(By.id("dates"),dataFrom + " - " + dataTo);
-        int i = (int)(System.currentTimeMillis()/1000%3600);
-        String screenshot = "src/test/screenshots/screen-"+i+".png";
+        type(By.id("dates"), dataFrom + " - " + dataTo);
+        int i = (int) (System.currentTimeMillis() / 1000 % 3600);
+        String screenshot = "src/test/screenshots/screen-" + i + ".png";
         takeScreenShot(screenshot);
         click(By.cssSelector("div.cdk-overlay-container"));
 
     }
 
     private void fillInputCity(String city) {
-        type(By.id("city"),city);
+        type(By.id("city"), city);
         pause(500);
         click(By.xpath("//div[@class='pac-item']"));
 
@@ -42,8 +42,8 @@ public class SearchHelper extends HelperBase{
         WebElement warning = wd.findElement(By.xpath("//div[@class='ng-star-inserted']"));
         String warningTxt = warning.getText();
 
-        new WebDriverWait(wd,10)
-                .until(ExpectedConditions.textToBePresentInElement(warning,warningTxt));
+        new WebDriverWait(wd, 10)
+                .until(ExpectedConditions.textToBePresentInElement(warning, warningTxt));
         return warningTxt.contains("before today");
     }
 
@@ -54,7 +54,7 @@ public class SearchHelper extends HelperBase{
 
     public void fillSearchFormCurrentMonth(String city, String dataFrom, String dataTo) {
         fillInputCity(city);
-        selectPeriodCurrentMonth(dataFrom,dataTo);
+        selectPeriodCurrentMonth(dataFrom, dataTo);
     }
 
     private void selectPeriodCurrentMonth(String dataFrom, String dataTo) {
@@ -67,8 +67,8 @@ public class SearchHelper extends HelperBase{
 //        dataF[1] ==26         //div[text()=' 26 '
 //        dataT[1] ==30         //div[text()=' 30 '
 
-        String dataLocatorFrom = String.format("div[text()=' %s ']",dataF[1]);
-        String dataLocatorTo = String.format("div[text()=' %s ']",dataT[1]);
+        String dataLocatorFrom = String.format("div[text()=' %s ']", dataF[1]);
+        String dataLocatorTo = String.format("div[text()=' %s ']", dataT[1]);
 
         click(By.xpath(dataLocatorFrom));
         click(By.xpath(dataLocatorTo));
@@ -76,26 +76,40 @@ public class SearchHelper extends HelperBase{
 
     public void fillSearchFormInFuture(String city, String dataFrom, String dataTo) {
         fillInputCity(city);
-        // 09/26/2021       10/30/2021
+//       08/26/2021      10/30/2021
         click(By.id("dates"));
+
         String[] dataF = dataFrom.split("/");
         String[] dataT = dataTo.split("/");
 
         int diffStart = 0;
-        if (LocalDate.now().getMonthValue()!= Integer.parseInt(dataF[0])){
-            diffStart = Integer.parseInt(dataF[0])-LocalDate.now().getMonthValue();
+        if (LocalDate.now().getMonthValue() != Integer.parseInt(dataF[0])) {
+            diffStart = Integer.parseInt(dataF[0]) - LocalDate.now().getMonthValue();
         }
-        for (int i = 0; i < diffStart; i++){
-            click(By.xpath("//button[@area-label='Next month']"));
+        for (int i = 0; i < diffStart; i++) {
+            click(By.xpath("//button[@aria-label='Next month']"));
         }
-        String dataLocatorFrom = String.format("div[text()=' %s ']",dataF[1]);
+        String dataLocatorFrom = String.format("//div[text()=' %s ']", dataF[1]);
         click(By.xpath(dataLocatorFrom));
 
-
-
+//      -----------        Homework       -----------     Set 'dateTo'      -----------
+        int diffEnd = 0;
+        if (Integer.parseInt(dataT[0])!=Integer.parseInt(dataF[0])){
+            diffEnd = Integer.parseInt(dataT[0]) - LocalDate.now().getMonthValue();
+        }
+        for (int i = 0; i < diffEnd; i++) {
+            click(By.xpath("//button[@aria-label='Next month']"));
+        }
+        String dataLocatorTo = String.format("//div[text()=' %s ']", dataT[1]);
+        click(By.xpath(dataLocatorTo));
+//      --------------------------------------------------------------------------------
     }
 
-
+    public void backToHome(){
+        click(By.xpath("//a[@href='/']"));
+        new WebDriverWait(wd,1)
+                .until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".search-container"))));
+    }
 
 
 }
